@@ -103,7 +103,36 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 ?
+carro.adicionarPessoas = function(numeroPessoasNovas) {
+    
+    let pessoasPluralAtual = 'pessoa'
+    let pessoasPluralResta = 'pessoa'
+    let caberPlural = 'cabe'
+       
+    if (numeroPessoasNovas <= carro.assentos && numeroPessoasNovas <= carro.vagasRestantes) {
+        carro.quantidadePessoas += numeroPessoasNovas
+        carro.vagasRestantes -= numeroPessoasNovas 
+        
+        if (carro.quantidadePessoas > 1) {
+            pessoasPluralAtual = 'pessoas'
+        }  
 
+        return `Já temos ${carro.quantidadePessoas} ${pessoasPluralAtual} no carro!`
+
+    }else if (numeroPessoasNovas <= carro.assentos && numeroPessoasNovas > carro.vagasRestantes) {
+        if (carro.vagasRestantes === 0) {
+            return `O carro está lotado!`
+        }
+        if (carro.vagasRestantes > 1){
+            pessoasPluralResta = 'pessoas'
+            caberPlural = 'cabem'
+        }
+        return `Só ${caberPlural} mais ${carro.vagasRestantes} ${pessoasPluralResta}!`
+
+    }else if (numeroPessoasNovas > carro.assentos) {
+        return `Só cabem ${carro.assentos} pessoas no carro!`
+    }   
+}
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
