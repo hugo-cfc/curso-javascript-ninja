@@ -14,7 +14,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
+let teams = ['CRB', 'csa', 'ASA', 'Coruripe', 'Murici']
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -59,6 +59,12 @@ while (i <= 30) {
     i++
 }
 
+let i = 20
+
+while (i <= 30) {
+    console.log(i++)
+}
+
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
     - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
@@ -71,22 +77,45 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function convertToHex(cor) {
-    switch (cor) {
+function convertToHex(color) {
+    switch (color) {
         case 'Azul':
-            return `O hexadecimal para a cor ${cor} é #0000FF.`
+            return `O hexadecimal para a cor ${color} é #0000FF.`
             break
         case 'Verde':
-            return `O hexadecimal para a cor ${cor} é #008000.`
+            return `O hexadecimal para a cor ${color} é #008000.`
             break
         case 'Vermelho':
-            return `O hexadecimal para a cor ${cor} é #FF0000.`
+            return `O hexadecimal para a cor ${color} é #FF0000.`
             break
         case 'Amarelo':
-            return `O hexadecimal para a cor ${cor} é #FFFF00.`
+            return `O hexadecimal para a cor ${color} é #FFFF00.`
+        default:
+            return `Não temos o equivalente hexadecimal para ${color}.`
+    }
+}
+
+function convertToHex(cor) {
+    let corHexa
+    switch (cor) {
+        case 'Azul':
+            corHexa = '#0000FF'
+            break
+        case 'Verde':
+            corHexa = '#008000.'
+            break
+        case 'Vermelho':
+            corHexa = '#FF0000'
+            break
+        case 'Amarelo':
+            corHexa = '#FFFF00'
+            break
         default:
             return `Não temos o equivalente hexadecimal para ${cor}.`
     }
+    
+    return `O hexadecimal para a cor ${cor} é ${corHexa}.`
+
 }
 
 /*
