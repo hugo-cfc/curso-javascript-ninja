@@ -24,7 +24,7 @@ Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log(myArray[8][1])
+console.log(`O segundo elemento do segundo array é ${myArray[8][1]}`)
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
@@ -48,18 +48,23 @@ while(i <= 20) {
     if(i % 2 === 0) {
         console.log(i) 
     }
+  ----------------------------
+    i % 2 === 0 ? console.log(i) : ''
     i++
 }
+
 
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 let i = 10
-console.log(`Números pares entre 10 e 20: `)
-while(i <= 20) {
+console.log(`Números ímpares entre 10 e 20: `)
+while(i < 20) {
     if(i % 2 === 1) {
         console.log(i) 
     }
+    ----------------------------
+    i % 2 === 1 ? console.log(i) : ''
     i++
 }
 
@@ -75,6 +80,9 @@ for(let i = 100; i <= 120; i++) {
     if(i % 2 === 0) {
         console.log(i)
     }
+    ----------------------------
+    i % 2 === 1 ? console.log(i) : ''
+    i++
 }
 
 console.log( 'Números ímpares entre 111 e 125 usando FOR:' )
@@ -82,4 +90,7 @@ for(let i = 111; i <= 125; i++) {
     if(i % 2 === 1) {
         console.log(i)
     }
+    ----------------------------
+    i % 2 === 1 ? console.log(i) : ''
+    i++
 }
