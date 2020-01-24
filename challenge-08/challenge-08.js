@@ -58,27 +58,23 @@ function calculator(operator) {
     return function(x, y) {
         switch (operator) {
             case '+':
-                operator = '-'
                 result = x + y
                 break
             case '-':
-                operator = '+'
                 result = x - y
                 break
             case '*':
-                operator = '*'
                 result = x * y
                 break
             case '/':
-                operator = '/'
                 result = x / y
                 break
             case '%':
-                operator = '%'
                 result = x % y
                 break
             default:
-                console.log(`Operação inválida.`)
+                return `Operação inválida.`
+                break
         }
         return `Resultado da operação: ${x} ${operator} ${y} = ${result}`
     }
