@@ -41,7 +41,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log(`A função ${showName.name} retorna ${varShowName} .`)
+console.log(`A função ${showName.name} retorna ${varShowName()} .`)
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
 - A função deve receber um parâmetro que dirá qual operação matemática ela
