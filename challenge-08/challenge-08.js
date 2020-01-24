@@ -12,7 +12,9 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log(`A soma de 40 e 32 é igual a ${sum(40, 32)}`) // A soma de 40 e 32 é igual a 72
+let value1 = 40
+let value2 = 32
+console.log(`A soma de ${value1} e ${value2} é igual a ${sum(value1, value2)}`) // A soma de 40 e 32 é igual a 72
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
