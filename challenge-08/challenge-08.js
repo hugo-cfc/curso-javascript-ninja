@@ -74,7 +74,6 @@ function calculator(operator) {
                 break
             default:
                 return `Operação inválida.`
-                break
         }
         return `Resultado da operação: ${x} ${operator} ${y} = ${result}`
     }
