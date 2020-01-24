@@ -82,7 +82,7 @@ function calculator(operator) {
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
-let sum = calculator(+)
+let sum = calculator('+')
 
 
 /*
