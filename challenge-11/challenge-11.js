@@ -64,7 +64,15 @@
         console.log(numbers[i] = i)
     }
 
-    console.log(numbers)
+  console.log(numbers)
+  
+  for(let i = 0; i <= 20; i++ ) {
+        if (i > 10) {
+            break
+        }
+        numbers.push(i)
+    }
+  console.log(numbers)
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -77,6 +85,7 @@
         if(i % 2 !== 0) {
             continue
         }
-        console.log(i)
+        numbers.push(i)
     }
+  console.log(numbers)
 })()
