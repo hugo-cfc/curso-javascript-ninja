@@ -85,7 +85,7 @@
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
   */
-  for(prop in books) {
+  for(let prop in books) {
         console.log(books[prop])
     } //{ name: 'Birds', pages: 223 }
       //{ name: 'Jungle', pages: 435 }
