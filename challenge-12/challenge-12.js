@@ -85,11 +85,20 @@
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
   */
-  for(let prop in books) {
-        console.log(books[prop])
-    } //{ name: 'Birds', pages: 223 }
-      //{ name: 'Jungle', pages: 435 }
+  
+  for(let i = 0; i < books.length; i++) {
+        for(let prop in books[i]) {
+            console.log(`${prop}: ${books[i][prop]}`)
+        }
+    }
+  ---------------------------------------------------------------------------
+  for(let i = 0; i < books.length; i++) {
+        console.log(`Nome: ${books[i].name} \nPáginas: ${books[i].pages} \n`)
+    } /*Nome: Birds 
+      Páginas: 223 
 
+      Nome: Jungle 
+      Páginas: 435*/
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
   seu nome. Adicione seu nome completo no array.
