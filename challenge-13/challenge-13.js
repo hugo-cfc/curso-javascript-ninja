@@ -8,9 +8,9 @@
   usando o método visto na aula 13.
   */
   console.log( 'O array em formato de string é:' );
-  let myArray = [12, 21, 40, {nome: 'hugo'}]
+  let myArray = [12, 21, 40]
 
-  console.log(JSON.stringify(myArray))//[12,21,40,{"nome":"hugo"}]
+  console.log(myArray.toString())//12,21,40
 
   /*
   Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -24,28 +24,47 @@
   concatenadas. Mostre o `brasil` no console.
   */
   console.log( '\nAlguns Estados do Brasil:' );
-  console.log(brasil)
+  console.log(brasil) /*[
+  'Minas Gerais',
+  'São Paulo',
+  'Rio de Janeiro',
+  'Espirito Santo',
+  'Paraná',
+  'Santa Catarina',
+  'Rio Grande do Sul'
+  ]*/
 
   /*
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
   console.log( '\nMais estados adicionados:' );
   let stateAdd = brasil.unshift('Amazonas', 'Pará')
-  console.log(stateAdd)
+  console.log(stateAdd) /*[
+  'Amazonas',
+  'Pará',
+  'Acre',
+  'Minas Gerais',
+  'São Paulo',
+  'Rio de Janeiro',
+  'Espirito Santo',
+  'Paraná',
+  'Santa Catarina',
+  'Rio Grande do Sul'
+  ]*/
 
   /*
   Remova o primeiro estado do array `brasil` e mostre-o no console.
   */
   console.log( '\nEstado removido:' );
   let stateRemoved = brasil.shift()
-  console.log(stateRemoved)
+  console.log(stateRemoved) //Amazonas
 
   /*
   Crie um novo array chamado `newSul`, que receba somente os estados do sul,
   pegando do array `brasil`. Não remova esses itens de `brasil`.
   */
   let newSul = []
-  brasil.slice()
+  brasil.slice(5)
   /*
   Mostre no console os estados que estão em `newSul`.
   */
@@ -132,6 +151,15 @@
     brasil.forEach(function(valor, index) {
         return newBrasil[index] = {id: index, estado: valor}
     }) 
+  
+  /*let newBrasil = []
+    brasil.forEach(function(valor, index) {
+        newBrasil.push({
+            id: index,
+            estado: item
+        })
+    })*/
+
 
   /*
   Mostre o array `newBrasil` no console
