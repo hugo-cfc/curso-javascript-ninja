@@ -82,13 +82,13 @@
   */
   console.log( '\nNova idade das pessoas:' );
   hugo.addAge(3)
-  console.log(`${hugo.getFullName()} agora tem ${hugo.age} anos.`)
+  console.log(`${hugo.getFullName()} agora tem ${hugo.getAge()} anos.`)
    
   joao.addAge(5)
-  console.log(`${joao.getFullName()} agora tem ${joao.age} anos.`)
+  console.log(`${joao.getFullName()} agora tem ${joao.getAge()} anos.`)
    
   junior.addAge(2)
-  console.log(`${junior.getFullName()} agora tem ${junior.age} anos.`)
+  console.log(`${junior.getFullName()} agora tem ${junior.getAge()} anos.`)
   /*Hugo Cesar agora tem 24 anos.
   João Carlos agora tem 48 anos.
   Júnior Silva agora tem 36 anos.*/
