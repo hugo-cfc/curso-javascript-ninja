@@ -32,8 +32,9 @@
        this.getAge = function getAge() {
            return age
        }
-       this.addAgr = function addAgr(numberAdd) {
-           return this.age = this.age + numberAdd
+       this.addAge = function addAge() {
+        this.age += arguments[0]
+        return this
        }
    } 
 
@@ -81,9 +82,8 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  hugo.addAge(3)
-  console.log(`${hugo.getFullName()} agora tem ${hugo.getAge()} anos.`)
-   
+  console.log(`${hugo.getFullName()} agora tem ${hugo.addAge(2).getAge()} anos.`)
+                                   /*Retorna o objeto. 'Return this'  */
   joao.addAge(5)
   console.log(`${joao.getFullName()} agora tem ${joao.getAge()} anos.`)
    
