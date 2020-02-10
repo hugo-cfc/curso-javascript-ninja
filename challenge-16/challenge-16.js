@@ -118,18 +118,24 @@
         })
     }
   
+  let friendsArray3 = friends.reduce(function (acumulado, atual, index) {
+    let separator = friends.length - 1 === index ? 'e' : ', '
+    return acumulado + separator + atual
+  })
+  
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
   */
   console.log( '\nEra "Roberto", agora é:' );
-  console.log('Roberto'.replace('Roberto', 'Roberta'))//Roberta
+  console.log('Roberto'.replace('to', 'ta'))//Roberta
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
   faz a busca do final para o início da string.
   */
   console.log( '\nParte de uma string:' );
   console.log('Fernando'.slice(3))//nando
+  console.log('Fernando'.substring(8,3))//nando
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
