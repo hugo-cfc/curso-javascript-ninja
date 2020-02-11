@@ -73,16 +73,63 @@
   */
   console.log( '\nMeses representados por números:' );
   function getMonthNumber(monthName) {
-        let months = {
-            'Janeiro': 01,
-            'Fevereiro': 02,
-            'Março': 03,
-            'Abril': 04,
-            'Maio': 05, 
-            
+        let numberMonth 
+        switch (monthName) {
+            case 'Janeiro':
+            case 'janeiro':  
+                numberMonth = '01'
+                break
+            case 'Fevereiro':
+            case 'fevereiro':
+                numberMonth = '02'
+                break
+            case 'Março': 
+            case 'março': 
+                numberMonth = '03'
+                break
+            case 'Abril': 
+            case 'abril': 
+                numberMonth = '04'
+                break
+            case 'Maio': 
+            case 'maio':
+                numberMonth = '05' 
+                break
+            case 'Junho': 
+            case 'junho': 
+                numberMonth = '06'
+                break
+            case 'Julho': 
+            case 'julho':
+                numberMonth = '07'
+                break
+            case 'Agosto': 
+            case 'agosto':
+                numberMonth = '08'
+                break 
+            case 'Setembro':
+            case 'setembro':
+                numberMonth = '09'
+                break
+            case 'Outubro':
+            case 'Outubro':
+                numberMonth = '10'
+                break
+            case 'Novembro':
+            case 'novembro':
+                numberMonth = '11'
+                break
+            case 'Dezembro':
+            case 'dezembro':
+                numberMonth = '12'
+                break
         }
+
         return numberMonth
     }
+    let monthName = 'Agosto'
+    console.log('\n', `O mês de ${monthName} é representado pelo número ${getMonthNumber(monthName)}.`)
+     
 
   /*
   Agora, declare uma variável chamada `regexDate` que irá receber a expressão
