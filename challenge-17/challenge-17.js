@@ -1,4 +1,5 @@
 (function() {
+  'use strict'
   /*
   1. Envolva todo o conteúdo desse desafio em uma IIFE.
   2. Adicione a diretiva 'use strict';
@@ -140,7 +141,8 @@
   Mostre a regex no console.
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-  // ?
+  /let regexDate = text.match(/1875|1804|13|18|junho|julho/gi)
+    console.log(regexDate)
 
   /*
   Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -150,5 +152,16 @@
   console o resultado.
   */
   console.log( '\nReplace de datas:' );
-  // ?
-})
+  function replaceDate(regexDate) {
+       /* for(let i; i < regexDate.length; i++) {
+            console.log(`${i}ª data do texto: ${regexDate[i]}/${getMonthNumber(regexDate[i+1])}/${regexDate[i+2]}`)    
+           
+        }*/
+
+        console.log(`Primeira data do texto: ${regexDate[0]}/${getMonthNumber(regexDate[1])}/${regexDate[2]}`)
+        console.log('\n', `Segunda data do texto: ${regexDate[3]}/${getMonthNumber(regexDate[4])}/${regexDate[5]}`)
+    }
+
+    replaceDate(regexDate)
+  
+})()
