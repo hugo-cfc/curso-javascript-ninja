@@ -56,7 +56,7 @@
     o método `toUpperCase()`. Mostre o resultado no console:
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-    console.log('\n', text.replace(/(O Centauro de Luvas)/gi, function(capturaTotal, item1) {
+    console.log('\n', text.replace(/(O Centauro de Luvas)/gi, function(capturaTotal, item1) { //Poderia usar sem parênteses
           return (item1).toUpperCase()
       }))
   
@@ -128,8 +128,31 @@
   
           return numberMonth
       }
-      let monthName = 'Agosto'
+
+      function getMonthNumber2(monthName) {
+        let months = {
+            janeiro: '01',
+            fevereiro: '02',
+            'março': '03',
+            abril: '04',
+            maio: '05',
+            junho: '06',
+            julho: '07',
+            agosto: '08',
+            setembro: '09',
+            outubro: '10',
+            novembro: '11',
+            dezembro: '12'
+        } 
+        return months[monthName]
+    }
+
+      let monthName = 'Março'
+      let monthName2 = 'Setembro'
+      let monthName3 = 'Dezembro'
       console.log('\n', `O mês de ${monthName} é representado pelo número ${getMonthNumber(monthName)}.`)
+      console.log('\n', `O mês de ${monthName2} é representado pelo número ${getMonthNumber(monthName2)}.`)
+      console.log('\n', `O mês de ${monthName3} é representado pelo número ${getMonthNumber(monthName3)}.`)
        
   
     /*
@@ -141,8 +164,14 @@
     Mostre a regex no console.
     */
 
-    console.log('RegexDate: ')
+   /* console.log('RegexDate: ')
     let regexDate = text.match(/1875|1804|13|18|junho|julho/gi)
+    console.log(regexDate)*/
+
+    console.log('RegexDate: ')
+    /*let regexDate = text.match(/(13)|(junho)|(1804)|(julho)|(1875)|(18)/g)*/
+
+    let regexDate = (/(\d\d) de (junho|julho) de (\d\d\d\d)/g)
     console.log(regexDate)
     
     
@@ -155,16 +184,32 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    function replaceDate(regexDate) {
-       /* for(let i; i < regexDate.length; i++) {
+    function replaceDate(regex, day, month, year) {
+        return `${day}/${getMonthNumber2(month)}/${year}`
+    }
+
+    console.log(text.replace(regexDate, replaceDate))
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*function replaceDate(regexDate) {
+        for(let i; i < regexDate.length; i++) {
             console.log(`${i}ª data do texto: ${regexDate[i]}/${getMonthNumber(regexDate[i+1])}/${regexDate[i+2]}`)    
            
-        }*/
+        }
 
         console.log(`Primeira data do texto: ${regexDate[0]}/${getMonthNumber(regexDate[1])}/${regexDate[2]}`)
         console.log('\n', `Segunda data do texto: ${regexDate[3]}/${getMonthNumber(regexDate[4])}/${regexDate[5]}`)
     }
 
-    replaceDate(regexDate)
+    replaceDate(regexDate)*/
   })()
   
