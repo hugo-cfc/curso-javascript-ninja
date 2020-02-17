@@ -109,3 +109,18 @@
         console.log('Com forIn: ' + hasClass(markup, arrayTest[prop]))
     }
 })()
+
+function hasClass(markup, cssClass) {
+    let regex = new RegExp('class=[\'"]((\\w+\\s)?' + cssClass + '|' + cssClass + '(\\s\\w+))?[\'"]', 'gmi')
+    if (regex.test(markup)) {
+        return `${true} para a classe ${cssClass}`
+    }else {
+        return `${false} para a classe ${cssClass}`   
+    }
+}
+
+let arrayTest = ['container', 'text', 'date', 'excerpt', 'main']
+
+arrayTest.forEach(function(item) {
+    console.log('Com forEach: ' + hasClass(markup, item))
+})
