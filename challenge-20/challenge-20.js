@@ -16,13 +16,8 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    let promptName = win.prompt('Qual é o seu nome?')
-    
-    let username 
-    
-    if (promptName) 
-        username = promptName
-    else
+    let username = win.prompt('Qual é o seu nome?')//||'Desconhecido'
+    if (!username) 
         username = 'Desconhecido'
     
     alert(`Bem vindo, ${username}`)
@@ -89,7 +84,20 @@
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    // ?
+        $button.addEventListener('click', function(event) {
+            event.preventDefault()
+            if(!$inputUsername.value||$inputUsername.value == 'Desconhecido')
+               return alert('Preencha o nome do usuário!')
+            if (!$inputEmail.value)
+                return alert('Preencha o e-mail!')
+            if (!$message.value)
+                return alert('Preencha a mensagem!')
+            if (!isValidEmail($inputEmail.value))
+                return alert ('Entre com um e-mail válido!')
+            if (confirm('Tem certeza que deseja enviar o formulário?'))
+                return alert('Enviado com sucesso!')
+            alert('Não enviado.')
+        } , false) 
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -117,5 +125,9 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    function isValidEmail(email) {
+        let regexpEmail = new RegExp('^[\\w+.]+@\\w+.\\w{2,}.(?:\\w{2})?$', 'gm')
+        return regexpEmail.test(email)
+    }
+
 })(window, document)
