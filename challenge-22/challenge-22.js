@@ -12,6 +12,16 @@
   let hugo = new Person('Hugo', 'Costa')
   let jose = new Person('José', 'da Costa')
 
+  let tereza = {
+    name: 'Tereza',
+    lastName: 'Costa'
+  }
+
+  let andrew = {
+    name: 'Andrew',
+    lastName: 'Silva'
+  }
+
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
   `name` e `lastName` dos objetos acima, formando um nome completo.
@@ -29,8 +39,15 @@
     return this.name + ' ' + this.lastName
   }
 
-  console.log(hugo.getFullName())
+  function getFullNameCall() {
+    return this.name + ' ' + this.lastName
+  }
+
+  console.log('-------', '\n', hugo.getFullName())
   console.log(jose.getFullName())
+
+  console.log(getFullNameCall.apply(tereza))
+  console.log(getFullNameCall.call(andrew))
 
 
 
@@ -78,7 +95,7 @@
   */
   console.log( '\nEntrada do usuário:' );
   $buttonSubmit.addEventListener('click', function() {
-    console.log($inputText.value)
+    console.log('----------------------', '\n', 'Entrada do usuário: ' + $inputText.value)
   }, false)
 
   /*
@@ -91,7 +108,7 @@
   let regexNumbers = /[^\D]+/gm
 
   function justNumbers(text) {
-      return text.match(regexNumbers)
+    return text.match(regexNumbers)
   }
   console.log(justNumbers.toString())
 
@@ -100,18 +117,25 @@
   atribuindo o resultado à uma variável `numbers`.
   */
   console.log( '\nEntrada do usuário limpa. Somente números:' );
-  let numbers = []
+  let numbers
+
   $buttonSubmit.addEventListener('click', function() {
-     console.log(numbers.push(justNumbers($inputText.value).join('')))
-     console.log(numbers)
+    numbers = justNumbers($inputText.value).join('')
+    
+    console.log('Limpando letras: ', numbers)
+    console.log(userEntry.push(Number(numbers)))
+    console.log(userEntry)
   }, false)
 
   /*
   Agora com o array de números, utilize a função `sum` para somar todos os
   números desse array e mostre o resultado no console.
   */
-  console.log( '\nSomar números entrados pelo usuário:' );
-  console.log(sum(numbers)) TESTANDO O GITHUB o contrário
+  console.log( '\nSomar números entrados pelo usuário:' );  
+  $buttonSubmit.addEventListener('click', function(){ 
+      if(userEntry.length > 1) 
+        console.log(sum.apply(null, userEntry), '\n', '---------------------------')
+  }, false)
 
 
 })(document, window)
