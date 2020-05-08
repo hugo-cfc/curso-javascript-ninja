@@ -52,8 +52,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 ?
-pessoa.andar = function(m2) {
-     pessoa.caminhouQuantosMetros = pessoa.caminhouQuantosMetros + m2 
+pessoa.andar = function(m) {
+     pessoa.caminhouQuantosMetros = pessoa.caminhouQuantosMetros + m
      pessoa.andando = true 
 }
 
@@ -100,7 +100,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 ?
 pessoa.mostrarAltura = function() {
-    return `Minha altura é ${pessoa.altura}m2.`
+    return `Minha altura é ${pessoa.altura}m.`
 }
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -130,7 +130,7 @@ inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 ?
 //pessoa.mostrarAltura()
-  Minha altura é 1.78m2.
+  Minha altura é 1.78m.
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
