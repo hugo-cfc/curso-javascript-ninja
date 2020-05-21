@@ -29,25 +29,6 @@
   let numbersClass = doc.querySelectorAll(".numbers");
   let operations = doc.querySelectorAll('[data-js="operations"]');
 
-  function resultCalculator(operator, number1, number2) {
-    switch (operator) {
-      case "+":
-        return number1 + number2;
-
-      case "-":
-        return number1 - number2;
-
-      case "X":
-      case "x":
-      case "*":
-        return number1 * number2;
-
-      case "/":
-      case "÷":
-        return number1 / number2;
-    }
-  }
-
   function numbersButtonTreatments(event) {
     if ($visor.value == 0) return ($visor.value = this.value);
     $visor.value += this.value;
