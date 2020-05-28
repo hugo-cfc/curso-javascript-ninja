@@ -2,3 +2,8 @@ node_modules
 *.swp
 yarn.lock
 package-lock.json
+test.js
+test2.js
+test3.js
+test4.js
+createTdFragment.js
