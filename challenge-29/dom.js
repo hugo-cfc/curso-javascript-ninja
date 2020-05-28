@@ -1,28 +1,13 @@
-(function (win, doc) {
-  "use strict";
-/*
-Aproveitando a lib DOM que fizemos na semana anterior, crie agora para ela
-métodos semelhantes aos que existem no array, mas que sirvam para os
-elementos do DOM selecionados.
-Crie os seguintes métodos:
-- forEach, map, filter, reduce, reduceRight, every e some.
+(function(){
+  'use strict'
 
-Crie também métodos que verificam o tipo do objeto passado por parâmetro.
-Esses métodos não precisam depender de criar um novo elmento do DOM, podem
-ser métodos estáticos.
-
-Métodos estáticos não obrigam o uso do `new`, podendo ser usados diretamente
-no objeto, como nos exemplos abaixo:
-DOM.isArray([1, 2, 3]); // true
-DOM.isFunction(function() {}); // true
-DOM.isNumber('numero'); // false
-
-Crie os seguintes métodos para verificação de tipo:
-- isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
-O método isNull deve retornar `true` se o valor for null ou undefined.
-*/
   function DOM(nodes) {
+    if(!(this instanceof DOM))
+      return new DOM(nodes)
+
     this.element = document.querySelectorAll(nodes);
+    if (this.element.length === 1)
+      return this.get()
   }
 
   DOM.prototype.on = function on(event, callback) {
@@ -37,8 +22,10 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
     });
   };
 
-  DOM.prototype.get = function get() {
-    return this.element;
+  DOM.prototype.get = function get(index) {
+    if (!index)
+      return this.element[0];
+    return this.element[index]
   };
 
   DOM.prototype.forEach = function forEach() {
@@ -114,11 +101,7 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
     console.log("Clicou");
   }
 
-  console.log(DOM.isArray([]))
-  console.log(DOM.isBoolean(true))
-  console.log(DOM.isFunction(function(){}))
-  console.log(DOM.isNull())
-  console.log(DOM.isNumber(1))
-  console.log(DOM.isString('3'))
+  window.DOM = DOM
 
-})(window, document);
+
+})()

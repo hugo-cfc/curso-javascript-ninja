@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>CEP-Correios</title>
+  </head>
+  <body>
+    <a href="/challenge-28/">
+      <header>
+        <img src="/challenge-28/assets/logo-correios-153622.png" />
+      </header>
+    </a>
+    <div class="container-form">
+      <h1>IDENTIFICADOR DE CEP</h1>
+      <div class="first-form">
+        <form>
+          <div class="camps">
+            <label id='cepLabel'>CEP:</label>
+            <input type="text" id='cepInput' placeholder="Digite o CEP" data-js="cep"/>
+            <label id='statusLabel'>
+              <span id ='statusSpan'>Status:</span>
+              <input id='statusInput' readonly type="text" data-js="status"/>
+          </label>
+          </div>
+        </form>
+      </div>
+
+      <div class="second-form">
+        <form>
+          <div class="camps" id="cityUf">
+            <label>Cidade:</label>
+            <input type="text" readonly  data-js="city"/>
+            <label>UF:</label>
+            <input type="text"  id="uf" readonly  data-js="state"/>
+          </div>
+          <div class="camps">
+            <label>Rua:</label>
+            <input type="text" id="street" readonly  data-js="street"/>
+          </div>
+          <div class="camps">
+            <label>Bairro:</label>
+            <input type="text" readonly  data-js="district"/>
+          </div>
+        </form>
+      </div>
+      <button data-js="button">Pesquisar</button>
+    </div>
+    <script src="challenge-28.js"></script>
+  </body>
+</html>

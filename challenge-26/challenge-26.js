@@ -1,3 +1,5 @@
+(function(win, doc){
+'use strict'
 /*
 O desafio dessa semana é criar uma mini library (biblioteca) para
 reutilizarmos nossos códigos quando fizermos manipulação de DOM!
@@ -19,13 +21,42 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
-// ?
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicou');
-});
+function DOM(nodes) {
+  this.element = document.querySelectorAll(nodes)
+}
+
+DOM.prototype.on = function on(event, callback) {
+  Array.prototype.forEach.call(this.element, function(item){
+    item.addEventListener(event, callback, false)
+  })
+}
+
+DOM.prototype.off = function off(event, callback) {
+  Array.prototype.forEach.call(this.element, function(item){
+    item.removeEventListener(event, callback, false)
+  })
+}
+
+DOM.prototype.get = function get() {
+  return this.element
+}
+
+DOM.prototype.forEachs = function forEachs() {
+  Array.prototype.forEach.call(this.element, function(item, index, arr){
+    console.log(item)
+  })
+}
+
+function universalCallback(event) {
+  event.preventDefault()
+  console.log('Clicou')
+}
+
+let $a = new DOM('[data-js="link"]');
+$a.off('click', universalCallback);
 
 console.log('Elementos selecionados:', $a.get());
 console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+})(window, document)
