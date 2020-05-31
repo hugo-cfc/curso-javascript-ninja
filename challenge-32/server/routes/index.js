@@ -1,8 +1,8 @@
 'use strict';
 
-var express = require('express');
-var router = express.Router();
-var data = [];
+const express = require('express');
+const router = express.Router();
+const data = [];
 
 router.get('/', function(req, res) {
   console.log('[GET] /car:', data)
